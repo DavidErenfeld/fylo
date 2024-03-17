@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Frontend Mentor - Fylo data storage component"
+    />
+    <meta
+      name="keywords"
+      content="Fylo data storage component, Frontend Mentor"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <title>Fylo data storage component</title>
+  </head>
+
+  <body>
+    <main>
+      <!--Fylo Container -->
+      <section class="fylo-container">
+        <img class="logo" src="images/logo.svg" alt="Fylo logo" />
+        <section class="icons">
+          <div class="icon-img">
+            <img src="images/icon-document.svg" alt="" aria-hidden="true" />
+          </div>
+          <div class="icon-img" id="uploadImage">
+            <img src="images/icon-folder.svg" alt="" aria-hidden="true" />
+          </div>
+          <div class="icon-img">
+            <img src="images/icon-upload.svg" alt="" aria-hidden="true" />
+          </div>
+          <input type="file" class="hidden" id="hiddenUploadBtn" multiple />
+        </section>
+      </section>
+      <!-- Storage Container -->
+      <section class="storage-container">
+        <p class="danger-text hidden" id="dangerText">
+          There is not enough space on the disk
+        </p>
+        <section class="buttons-container" id="imageList"></section>
+        <h1>You've used <span id="usedStorage">0 MB</span> of your storage</h1>
+        <!-- Progress Bar -->
+        <section class="progress-bar">
+          <div class="gradient-bar" id="gradient">
+            <div class="dot-container">
+              <div class="dot"></div>
+            </div>
+          </div>
+        </section>
+        <h2>
+          <span id="currentMemory">0 MB</span>
+          <span id="maxMemory">10 MB</span>
+        </h2>
+        <!-- GB left -->
+        <section class="gb-left">
+          <p><spen id="availableSpace">10</spen><span> MB left</span></p>
+        </section>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
