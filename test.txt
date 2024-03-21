@@ -1,0 +1,34 @@
+const updateDisplay = () => {
+  console.log("updateDisplay");
+  const usedSpace = parseFloat(localStorage.getItem("usedSpace"), 10) || 0;
+  const freeSpace =
+    parseFloat(localStorage.getItem("availableSpace"), 10).toFixed(2) || 10;
+  const barWidth = usedSpace.toFixed(2) * 10 || 0;
+
+  gradient.style.width = `${barWidth}%`;
+  usedStorage.innerHTML = `${usedSpace} MB`;
+  currentMemory.innerHTML = `${usedSpace} MB`;
+  freeSpace === 10
+    ? (availableSpace.innerHTML = 10)
+    : (availableSpace.innerHTML = `${freeSpace}`);
+};
+
+const createButton = () => {
+  const button = document.createElement("button");
+  button.classList.add("my-button");
+  return button;
+};
+
+const putValuesInButton = (button, imageSize, imageName) => {
+  button.innerText = `${imageSize}`;
+  button.value = imageName;
+  return button;
+};
+
+const createButtonsList = (arr) => {
+  arr.forEach((item) => {
+    const button = createButton();
+    putValuesInButton(button, item.imageSize, item.imageName);
+    imageList.appendChild(button);
+  });
+};
